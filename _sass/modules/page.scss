@@ -1,0 +1,139 @@
+
+
+/**
+ * Page content
+ */
+.page-content {
+		padding: $spacing-unit 0;
+}
+
+.two-columns {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	@include media-query($on-palm) {
+		display: block;
+	}
+
+	@include media-query($on-mobile) {
+		display: block;
+	}
+}
+
+.box {
+	background-color: #FFFFFF;
+	padding: 20px;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
+	margin-bottom: $spacing-unit;
+
+	@include media-query($on-laptop) {
+		margin-bottom: $spacing-unit/2;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.left-column {
+	flex-grow: 1;
+	// margin-right: $spacing-unit/2;
+	// All margin is being set on the right column
+}
+
+.right-column {
+	margin-left: $spacing-unit;
+	
+	@include media-query($on-laptop) {
+		margin-left: $spacing-unit/2;
+	}
+
+	flex-shrink: 0;
+	width: 200px;
+
+	@include media-query($on-palm) {
+		flex-grow: 1;
+		width: auto;
+		margin-left: 0;
+	}
+
+
+	h2 {
+		font-weight: bold;
+		font-size: 18px;
+	}
+
+	ul {
+		list-style: none;
+		margin-left: 0;
+		margin-bottom: 0;
+
+		li.related-post {
+
+			a {
+
+				transition: all ease 0.3s;
+				
+				h3 {
+					margin-bottom: 3px;
+					color: $grey-color;
+					font-size: 15px;
+				}
+
+				.img-right-column {
+					margin-bottom: 5px;
+					opacity: 0.9;
+
+					@include media-query($on-palm) {
+						display: none;
+					}
+
+					@include media-query($on-mobile) {
+						display: block;
+					}
+				}
+
+				p.post-meta {
+					color: $brand-color;
+					margin-bottom: 0;
+				}
+
+				.separator {
+					margin-top: 20px;
+					margin-bottom: 20px;
+					border-bottom: 1px solid $grey-color-light;
+					width: 30px;
+				}
+
+				&:hover {
+					h3 {
+						color: $grey-color-dark;
+					}
+					.img-right-column {
+						opacity: 1;
+					}
+					p.post-meta {
+						color: $brand-color-lighter;
+					}
+				}
+			}
+		}
+
+		li.related-post:last-child {
+			a {
+				.separator {
+					margin-top: 0;
+					margin-bottom: 0;
+					border-bottom: none;
+					width: 30px;
+				}
+			}
+		}
+	}
+}
+
+.page-heading {
+	font-size: 20px;
+}

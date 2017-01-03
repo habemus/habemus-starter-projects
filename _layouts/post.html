@@ -2,41 +2,86 @@
 layout: habemus-post
 ---
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  
+  <div class="breadcrumb">
+    <a href="{{ site.data.t[page.lang].homeUrl }}">
+      {{ site.data.t[page.lang].starterTemplates }}
+    </a> > <b>{{ page.title }}</b>
+  </div>
+  
+  <header class="post-header">
+    
+    <div class="preview-container">
+      <div class="preview tablet">
+        <div>
+          <iframe data-src="{{ page.preview-url }}"></iframe>
+          <div class="screen-overlay"></div>
+        </div>
+      </div>
+      <div class="preview desktop">
+        <div>
+          <iframe data-src="{{ page.preview-url }}"></iframe>
+          <div class="screen-overlay"></div>
+        </div>
+      </div>
+      <div class="preview mobile">
+        <div>
+          <iframe data-src="{{ page.preview-url }}"></iframe>
+          <div class="screen-overlay"></div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="info">
+      <h2>
+        {{ page.title }}
+      </h2>
+      <time
+        datetime="{{ page.date }}"
+        itemprop="datePublished">
+        {{ page.date | date: "%B %-d, %Y" }}
+      </time>
+      
+      {% if page.author %}
+      <span
+        itemprop="author"
+        itemscope
+        itemtype="http://schema.org/Person">
+        <span itemprop="name">
+          {{ site.data.t[page.lang].developedBy }} <b>{{ page.author }}</b>
+        </span>
+      </span>
+      <br />
+      {% endif %}
+      
+      <p>
+        {{ page.description }}
+      </p>
+      
+      <div class="actions">
+        <button data-action="open-previewer">
+          {{ site.data.t[page.lang].seePreview }}
+        </button>
+    	  <a
+    	    target="_blank"
+    	    href="{{ site.url }}/resources/templates/{{ page.ref }}/website.zip">
+          {{ site.data.t[page.lang].download }}
+        </a>
+    	  
+        <a
+          class="primary habemus-button"
+          target="_blank"
+          data-action="deploy"
+	        data-template-url="{{ site.url }}/resources/templates/{{ page.ref }}/website.zip">
+          {{ site.data.t[page.lang].deployToHabemus }}
+        </a>
 
-
+      </div>
+    </div>
+    
+  </header>
+  
 	<div class="box">
-
-	  <header class="post-header">
-	  	{% if page.image-x %}<img src="{{ page.image-x }}" class="full-width-img">{% endif %}
-	    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-	    <p class="post-meta">{% if page.author %}<span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">escrito por <b>{{ page.author }}</b></span></span><br />{% endif %}
-	    <time datetime="{{ page.date }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>
-	    </p>
-	  </header>
-	  
-	  <!-- temporary -->
-	  <!-- temporary -->
-	  <!-- temporary -->
-	  <!-- temporary -->
-	  
-	  <a
-	    href="{{ site.url }}/resources/templates/{{ page.ref }}/website.zip">
-	    download
-	  </a>
-	  
-	  <a
-	    target="_blank"
-	    href="{{ site.dashboard_url }}#/?templateURL={{ site.url }}/resources/templates/{{ page.ref }}/website.zip">
-	    deploy
-	  </a>
-	  
-	  <iframe src="{{ site.url }}/resources/templates/{{ page.ref }}/website/index.html" frameborder="0"></iframe>
-	  <!-- temporary -->
-	  <!-- temporary -->
-	  <!-- temporary -->
-	  <!-- temporary -->
-	  <!-- temporary -->
-
 
 	  <div class="post-content" itemprop="articleBody">
 	    {{ content }}
@@ -51,7 +96,7 @@ layout: habemus-post
   		<img src="{{ author.photo }}">
   	</div>
   	<div>
-      {{ site.data.t[page.lang].writtenBy }} <br />
+      {{ site.data.t[page.lang].developedBy }} <br />
   		<a rel="author"
 		  href="{{ author.linkedin }}"
 		  title="{{ author.name }}" class="author-name" target="_blank">
@@ -60,6 +105,66 @@ layout: habemus-post
 			<p>{{ author.bio }}</p>
   	</div>
   </div>
+  
+  <!-- previewer -->
+  <div id="previewer" data-mode="desktop">
+    <header id="previewer-header">
+      <div class="left">
+        <div class="actions">
+          <a
+            class="primary habemus-button"
+            target="_blank"
+            data-action="deploy"
+  	        data-template-url="{{ site.url }}/resources/templates/{{ page.ref }}/website.zip">
+            {{ site.data.t[page.lang].deployToHabemus }}
+          </a>
+        </div>
+        
+        <h1>{{ page.title }}</h1>
+      </div>
+      
+      <ul id="previewer-mode-selector" class="center">
+        <li data-mode="desktop">
+          desktop
+        </li>
+        <li data-mode="tablet">
+          tablet
+        </li>
+        <li data-mode="mobile">
+          mobile
+        </li>
+      </ul>
+      
+      <div class="right">
+        <a href="{{ page.preview-url }}" target="_blank">
+          new-window
+        </a>
+        
+        <button data-action="close-previewer" class="close">
+          x
+        </button>
+      </div>
+    </header>
+    <section id="previewer-body">
+      <div id="previewer-iframe-container">
+        <iframe data-src="{{ page.preview-url }}"></iframe>
+      </div>
+    </section>
+  </div>
+  <!-- previewer -->
+  
+  <!-- config -->
+  <script>
+    window.HABEMUS_DASHBOARD_URI = '{{ site.dashboard_url }}';
+  </script>
+  
+  <!-- lib -->
+  <script src="/bower_components/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/resources/scripts/lib/habemus-buttons.js" type="text/javascript" charset="utf-8"></script>
+  
+  <!-- scripts -->
+  <script src="/resources/scripts/global.js" type="text/javascript" charset="utf-8"></script>
+  <script src="/resources/scripts/post.js" type="text/javascript" charset="utf-8"></script>
 
 
   <div id="disqus_thread" class="box"></div>

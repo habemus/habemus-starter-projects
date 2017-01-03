@@ -5,10 +5,12 @@ title:  "Squares Grid"
 lang:   en
 ref:    squares-grid
 date:   2016-03-07
-text-lead: A internet é o símbolo de uma era que tem o potencial de redesenhar as estruturas sociais do futuro. Entenda por que criamos a Habemus e quais são os nossos objetivos dentro deste contexto global.
-image-thumb: http://blog.habemus.website/img/posts/1/image-thumb.jpg
-image-thumb-column-right: http://blog.habemus.website/img/posts/1/image-thumb-column-right.jpg
-image-x: http://blog.habemus.website/img/posts/1/image-x.jpg
+
+preview-url: /resources/templates/squares-grid/website/index.html
+
+description: O template base Smooth Scroll oferece a estrutura de um menu nav com links para seções correspondentes da página única e transição de animação suave.
+image-thumb: /resources/templates/squares-grid/screenshot.png
+
 alt-image: "imagem ilustrativa do post"
 categories: web habemus filosofia
 ---

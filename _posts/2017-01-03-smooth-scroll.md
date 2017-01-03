@@ -5,15 +5,15 @@ title:  "Smooth Scroll"
 lang:   en
 ref:    smooth-scroll
 date:   2016-03-07
-text-lead: A internet é o símbolo de uma era que tem o potencial de redesenhar as estruturas sociais do futuro. Entenda por que criamos a Habemus e quais são os nossos objetivos dentro deste contexto global.
-image-thumb: http://blog.habemus.website/img/posts/1/image-thumb.jpg
-image-thumb-column-right: http://blog.habemus.website/img/posts/1/image-thumb-column-right.jpg
-image-x: http://blog.habemus.website/img/posts/1/image-x.jpg
+
+preview-url: /resources/templates/smooth-scroll/website/index.html
+
+description: O template base Smooth Scroll oferece a estrutura de um menu nav com links para seções correspondentes da página única.
+image-thumb: /resources/templates/smooth-scroll/screenshot.png
 alt-image: "imagem ilustrativa do post"
 categories: web habemus filosofia
-
-
 ---
+
 A internet foi concebida na década de 1960, em plena guerra fria, como um <a href="https://www.rand.org/about/history/baran.html" target="_blank">sistema distribuído de comunicação capaz de sobreviver à uma guerra nuclear</a>. Enquanto a malha de telecomunicação então existente nos Estados Unidos era centralizada, ou seja, toda a transmissão de dados dependia de um único nó intermediário da rede, a internet foi desenhada como um sistema distribuído de comunicação com múltiplos nós equivalentes entre si e capazes de direcionar os dados pelo melhor caminho até seu destino final.
 
 Em uma rede centralizada, existe apenas um único nó responsável por receber e enviar os dados aos destinatários finais. Caso esse nó seja destruído, todo o sistema de troca de dados é inutilizado.

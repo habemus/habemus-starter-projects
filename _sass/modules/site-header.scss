@@ -1,0 +1,97 @@
+/**
+ * Site header
+ */
+.site-header {
+	background-color: $grey-color-dark;
+	min-height: 68px;
+	font-family: "Montserrat", sans-serif;
+
+	// Positioning context for the mobile navigation icon
+	position: relative;
+
+	#header-content {
+		padding: 22px 0px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 16px;
+		
+		transition: all ease 0.3s;
+
+		#content-left {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			align-items: center;
+
+			#logo {
+				width: 116px;
+				height: 24px;
+				margin-right: $spacing-unit/2;
+				margin-top: -6px;
+
+				@include media-query($on-mobile) {
+					margin-right: $spacing-unit/3;
+				}
+			}
+
+			#logo img {
+				width: 116px;
+				height: 24px;
+			}
+
+			a.header-title {
+				color: #3EEEB7;
+				text-decoration: none;
+				transition: all ease 0.3s;
+
+				&:hover {
+					color: #0ADDA6;
+					text-decoration: none;
+				}
+			}
+		}
+
+		#content-right {
+			#language {
+				margin-right: $spacing-unit/2;
+				color: #A3A3A3;
+
+				@include media-query($on-mobile) {
+					margin-right: $spacing-unit/4;
+				}
+
+				a{
+					text-decoration: none;
+					color: #A3A3A3;
+					transition: all ease 0.3s;
+
+					&.en:lang(en), &.pt:lang(pt) {
+						text-decoration: none;
+						color: #F5F5F5;
+					}
+
+					&:hover {
+						color: #3EEEB7;
+						text-decoration: none;
+					}
+				}
+			}
+
+			a#go-to-habemus {
+				text-decoration: none;
+				color: #F5F5F5;
+				transition: all ease 0.3s;
+
+				@include media-query($on-mobile) {
+					display: none;
+				}
+
+				&:hover {
+					color: $brand-color-lighter;
+				}
+			}
+		}
+	}
+}

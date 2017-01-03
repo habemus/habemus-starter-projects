@@ -13,40 +13,63 @@ layout: habemus-page
 
     {% for post in langPosts %}
       <li class="box-style box">
-<!--         {% if post.image-thumb %}
-        <img src="{{ post.image-thumb }}" alt="{{ post.alt-image }}" class="full-width-img">
-        {% endif %}
-
-        <span class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url }}">{{ post.title }}</a>
-        </h2>
-        <p>{{ post.text-lead }}</p> -->
-
-
-        <a class="post-link" href="{{ post.url }}">
-        {% if post.image-thumb %}
-        <img src="{{ post.image-thumb }}" alt="{{ post.alt-image }}" class="full-width-img">
-        {% endif %}
-
-        <span class="post-meta">{{ post.date | date: "%B %-d, %Y" }}</span>
-
-        <h2>
-        {{ post.title }}
-        </h2>
-        <p>{{ post.text-lead }}</p>
+        
+        <a
+          class="post-link"
+          href="{{ post.url }}">
+          {% if post.image-thumb %}
+          <img
+            src="{{ post.image-thumb }}"
+            alt="{{ post.alt-image }}"
+            class="full-width-img">
+          {% endif %}
+  
+          <span class="post-meta">
+            {{ post.date | date: "%B %-d, %Y" }}
+          </span>
+  
+          <h2>
+            {{ post.title }}
+          </h2>
+          
+          <p>
+            {{ post.description }}
+          </p>
         </a>
-
-
-
 
         <div class="share-page share-page-post">
         <!--     Share this on &rarr; -->
           {{ site.data.t[page.lang].shareThisOn }}
-          <a href="https://twitter.com/intent/tweet?text={{ post.title | strip_html }}&url={{ post.url | prepend: site.url }}&via={{ site.twitter_username }}&related={{ site.twitter_username }}" rel="nofollow" target="_blank" title="Share on Twitter"><span class="icon icon--twitter">{% include icon-twitter.svg %}</span>Twitter</a>
-          <a href="https://facebook.com/sharer.php?u={{ post.url | prepend: site.url }}" rel="nofollow" target="_blank" title="Share on Facebook"><span class="icon icon--facebook">{% include icon-facebook.svg %}</span>Facebook</a>
-          <a href="https://plus.google.com/share?url={{ post.url | prepend: site.url }}" rel="nofollow" target="_blank" title="Share on Google+"><span class="icon icon--google">{% include icon-google.svg %}</span>Google+</a>
+          <a
+            href="https://twitter.com/intent/tweet?text={{ post.title | strip_html }}&url={{ post.url | prepend: site.url }}&via={{ site.twitter_username }}&related={{ site.twitter_username }}"
+            rel="nofollow"
+            target="_blank"
+            title="Share on Twitter">
+            <span class="icon icon--twitter">
+              {% include icon-twitter.svg %}
+            </span>
+            Twitter
+          </a>
+          <a
+            href="https://facebook.com/sharer.php?u={{ post.url | prepend: site.url }}"
+            rel="nofollow"
+            target="_blank"
+            title="Share on Facebook">
+            <span class="icon icon--facebook">
+              {% include icon-facebook.svg %}
+            </span>
+            Facebook
+          </a>
+          <a
+            href="https://plus.google.com/share?url={{ post.url | prepend: site.url }}"
+            rel="nofollow"
+            target="_blank"
+            title="Share on Google+">
+            <span class="icon icon--google">
+              {% include icon-google.svg %}
+            </span>
+            Google+
+          </a>
         </div>      
       </li>
     {% endfor %}
