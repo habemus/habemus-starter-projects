@@ -1,0 +1,11 @@
+- coluna da direita responsiva
+- header responsivo
+- layout de share na pg de posts
+- subscribe na coluna da direita
+- arrumar font-sizes
+- escrever o post 1
+- perfis pessoais e coletivo
+- habemus footer target blank
+- fonte c ou s serifa
+- link blog header está como “teste”
+- escrever pag do about

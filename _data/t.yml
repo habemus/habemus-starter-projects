@@ -1,0 +1,14 @@
+en:
+  homeUrl: "/"
+  goToHabemus: "go to habemus"
+  writtenBy: "written by"
+  subscribe: "subscribe"
+  followHabemus: "follow habemus"
+  shareThisOn: "share this on"
+pt:
+  homeUrl: "/pt"
+  goToHabemus: "ir para a habemus"
+  writtenBy: "escrito por"
+  subscribe: "assine"
+  followHabemus: "siga a habemus"
+  shareThisOn: "compartilhe este post"

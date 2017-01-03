@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="two-columns">    
+          <div class="left-column">
+            {{ content }}
+          </div>
+
+          <div class="right-column">
+
+            <!-- related box only appears when there are related posts -->
+
+            <!-- first define a variable with only highlighted posts in the same language -->
+            {% assign langHighlights=site.posts | where:"lang", page.lang | where:"ref", highlight %}
+            {% assign highlightedPostsCount=langHighlights | size %}
+
+            {% if highlightedPostsCount > 0 %}
+            <div class="box">
+              <h2>destaques</h2>
+
+              <ul>
+              <!--
+              for each highlight, 
+              look for a post in the corresponding language 
+              -->
+              {% for highlight in site.highlights %}
+
+                {% for post in langHighlights %}
+                <li class="related-post">
+
+                  <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+                    {% if post.image-thumb-column-right %}<img src="{{ post.image-thumb-column-right }}" alt="{{ post.alt-image }}" class="img-right-column">{% endif %}
+
+                    <h3>{{ post.title }}</h3>
+
+                    <p class="post-meta">
+                      {{ post.date | date: "%B %-d, %Y" }}
+                    </p>
+
+                    <div class="separator"></div>
+                  </a>
+                </li>
+                {% endfor %}
+
+              {% endfor %}
+              </ul>
+            </div>
+            {% endif %}
+
+            <div class="box">
+              <h2>{{ site.data.t[page.lang].followHabemus }}</h2>
+              <p class="rss-subscribe">{{ site.data.t[page.lang].subscribe }} <a href="{{ "/feed.xml" | prepend: site.url }}" target="_blank">via RSS</a></p>
+              <p><a href="mailto:hello@habem.us">hello@habem.us</a></p>
+              <p><a href="https://twitter.com/habemus_web" target="_blank" title="Habemus Twitter" rel=”nofollow”><span class="icon icon--twitter">{% include icon-twitter.svg %}</span>Twitter</a></p>
+              <p><a href="https://www.facebook.com/habemusplatform/" rel="nofollow" target="_blank" title="Share on Facebook"><span class="icon icon--facebook">{% include icon-facebook.svg %}</span>Facebook</a></p>
+              <p><a href="http://habem.us" target="_blank">habem.us</a></p>
+              <!-- <p>Medium</p> -->
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-71194663-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+  </body>
+
+</html>

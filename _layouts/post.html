@@ -1,0 +1,90 @@
+---
+layout: habemus-post
+---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+
+	<div class="box">
+
+	  <header class="post-header">
+	  	{% if page.image-x %}<img src="{{ page.image-x }}" class="full-width-img">{% endif %}
+	    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
+	    <p class="post-meta">{% if page.author %}<span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">escrito por <b>{{ page.author }}</b></span></span><br />{% endif %}
+	    <time datetime="{{ page.date }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>
+	    </p>
+	  </header>
+	  
+	  <!-- temporary -->
+	  <!-- temporary -->
+	  <!-- temporary -->
+	  <!-- temporary -->
+	  
+	  <a
+	    href="{{ site.url }}/resources/templates/{{ page.ref }}/website.zip">
+	    download
+	  </a>
+	  
+	  <a
+	    target="_blank"
+	    href="{{ site.dashboard_url }}#/?templateURL={{ site.url }}/resources/templates/{{ page.ref }}/website.zip">
+	    deploy
+	  </a>
+	  
+	  <iframe src="{{ site.url }}/resources/templates/{{ page.ref }}/website/index.html" frameborder="0"></iframe>
+	  <!-- temporary -->
+	  <!-- temporary -->
+	  <!-- temporary -->
+	  <!-- temporary -->
+	  <!-- temporary -->
+
+
+	  <div class="post-content" itemprop="articleBody">
+	    {{ content }}
+	  </div>
+	  
+	  {% include _share-page.html %}
+  </div>
+
+  <div class="box author-content">
+  	{% assign author = site.data.author[page.author] %}
+  	<div class="author-photo">
+  		<img src="{{ author.photo }}">
+  	</div>
+  	<div>
+      {{ site.data.t[page.lang].writtenBy }} <br />
+  		<a rel="author"
+		  href="{{ author.linkedin }}"
+		  title="{{ author.name }}" class="author-name" target="_blank">
+		    {{ author.name }}
+			</a>
+			<p>{{ author.bio }}</p>
+  	</div>
+  </div>
+
+
+  <div id="disqus_thread" class="box"></div>
+	<script>
+		/**
+		* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+		*/
+		
+		var disqus_config = function () {
+		this.page.url = "{{ site.baseurl.page.url }}"; // Replace PAGE_URL with your page's canonical URL variable
+		console.log(this.page.url);
+		this.page.identifier = "{{ page.id }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		};
+		
+		(function() { // DON'T EDIT BELOW THIS LINE
+		var d = document, s = d.createElement('script');
+
+		s.src = '//habemus-blog.disqus.com/embed.js';
+
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+		})();
+	</script>
+
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+</article>
