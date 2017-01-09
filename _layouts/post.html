@@ -64,7 +64,7 @@ layout: habemus-post
         </button>
     	  <a
     	    target="_blank"
-    	    href="{{ page.zip-url }}">
+    	    href="{{ site.url }}/resources/starter-projects/{{ page.ref }}/website.zip">
           {{ site.data.t[page.lang].download }}
         </a>
     	  
@@ -72,7 +72,7 @@ layout: habemus-post
           class="primary habemus-button"
           target="_blank"
           data-action="deploy"
-	        data-template-url="{{ page.zip-url }}">
+	        data-template-url="{{ site.url }}/resources/starter-projects/{{ page.ref }}/website.zip">
           {{ site.data.t[page.lang].deployToHabemus }}
         </a>
 
@@ -115,7 +115,7 @@ layout: habemus-post
             class="primary habemus-button"
             target="_blank"
             data-action="deploy"
-  	        data-template-url="{{ site.url }}/resources/templates/{{ page.ref }}/website.zip">
+  	        data-template-url="{{ site.url }}/resources/starter-projects/{{ page.ref }}/website.zip">
             {{ site.data.t[page.lang].deployToHabemus }}
           </a>
         </div>

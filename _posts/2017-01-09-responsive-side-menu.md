@@ -7,7 +7,6 @@ ref:    responsive-side-menu
 date:   2017-01-09
 
 preview-url: http://responsive-side-menu.habemus.website/
-zip-url: /resources/starter-projects/responsive-side-menu/website.zip
 
 description: A starter HTML5+CSS3 website project with a collapsible responsive side menu.
 image-thumb: /resources/starter-projects/responsive-side-menu/screenshot.png

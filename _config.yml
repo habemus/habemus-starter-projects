@@ -8,12 +8,12 @@
 # Site settings
 title: Habemus blog
 site_title: Habemus
-site_url: http://dev-templates.habemus.website/
+site_url: http://starter-projects.habemus.website/
 dashboard_url: http://habemus.io/dashboard
 email: hello@habem.us
 description: A Habemus é uma plataforma de desenvolvimento web para a geração maker
 # baseurl: "http://blog.habemus.website" # the subpath of your site, e.g. /blog
-url: http://dev-templates.habemus.website # the base hostname & protocol for your site
+url: http://starter-projects.habemus.website # the base hostname & protocol for your site
 twitter_username: "habemus_web"
 github_username:  "habemus"
 
