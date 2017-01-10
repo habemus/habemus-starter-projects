@@ -35,16 +35,16 @@ Este projeto base já vem pronto com o funcionamento de um menu que se adequa ao
 
 ```
 responsive-side-menu/
-├── img/                          # directory containing all images
+├── img/                          # pasta que contém todas as imagens
 │   ├── logo.png
 │   └── menu-trigger-images.svg
 ├── scripts/
-│   └── header.js                 # responsive header interactions
+│   └── header.js                 # interações no header responsivo
 ├── styles/
-│   ├── header.css                # responsive header styles
-│   ├── reset.css                 # browser resets
-│   └── style.css                 # main stylesheet
-└── index.html                    # homepage
+│   ├── header.css                # estilos do header responsivo
+│   ├── reset.css                 # reset do browser
+│   └── style.css                 # folha de estilo principal
+└── index.html                    # home
 ```
 
 ## Desenvolvido por
