@@ -1,40 +1,39 @@
 ---
 layout: post
 author: habemus
-title:  Responsive side menu
+title:  Smooth scroll
 lang:   en
-ref:    responsive-side-menu
+ref:    smooth-scroll
 date:   2017-01-11
 
-preview-url: http://responsive-side-menu.habemus.website/
+preview-url: http://smooth-scroll.habemus.website/
 
-description: A starter HTML5+CSS3 website project with a collapsible responsive side menu.
-image-thumb: /resources/starter-projects/responsive-side-menu/screenshot.png
+description: A starter HTML5+CSS3+JS website project with a collapsible responsive side menu and smooth scroll transition among sections.
+image-thumb: /resources/starter-projects/smooth-scroll/screenshot.png
 
 alt-image: "screenshot"
-categories: web habemus responsive
+categories: web habemus responsive smooth scroll transition
 ---
 # Responsive side menu starter project
 
-A starter HTML5+CSS3 website project with a collapsible responsive side menu.
+A starter HTML5+CSS3+JS website project with a collapsible responsive side menu and smooth scroll transition among sections.
 
 ## What is a starter project?
 
 A starter project is a project with the basic file structure and some components readily integrated. They are great for starting your own website.
 
-## What's inside 'responsive side menu'?
+## What's inside 'smooth scroll'?
 
 This starter project comes with a menu that adequates itself to the screen width of the device in which the website was opened.
 
-- in large devices (>500px) the navigation menu is displayed in the top of the page
-- in smaller devices (<=500px) the menu is hidden by default and can be opened by clicking on a menu button on the top left of the page
+Besides, when clicking on menu links, the view slides down and up smoothly. Menu also supports external links.
 
-![preview](https://github.com/habemus/starter-responsive-side-menu/raw/master/preview.gif "Preview")
+![preview](https://github.com/habemus/starter-smooth-scroll/raw/master/preview.gif "Preview")
 
 ## File structure
 
 ```
-responsive-side-menu/
+starter-smooth-scroll/
 ├── img/                          # directory containing all images
 │   ├── logo.png
 │   └── menu-trigger-images.svg

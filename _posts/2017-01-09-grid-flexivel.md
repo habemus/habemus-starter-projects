@@ -6,7 +6,7 @@ lang:   pt
 ref:    flex-grid
 date:   2017-01-09
 
-preview-url: http://starter-flex-grid.habemus.website/
+preview-url: http://flex-grid.habemus.website/
 
 description: Projeto base de página web HTML5 + CSS3 com menu lateral responsivo e grid de elementos flexível.
 image-thumb: /resources/starter-projects/flex-grid/screenshot.png
@@ -27,7 +27,7 @@ Um projeto base é um projeto com a estrutura básica de arquivos e alguns compo
 Este projeto base já vem pronto com o funcionamento de um menu que se adequa ao tamano da tela do dispositivo em que o website for acessado, com as interações de abertura e fechamento do menu definidas.
 
 - dispositivos grandes  (>500px): menu que mostra todos os itens de navegação
-- dispositivos pequenos (<=500px): menu que é acionado por um botão abre pela lateral nos dispositivos menores.
+- dispositivos pequenos (<=500px): menu que é acionado por um botão e abre pela lateral nos dispositivos menores.
 
 Além disso, ele possui um grid flexível de elementos, que faz com que o conteúdo se adeque dinamicamente ao tamanho da tela do dispositivo.
 

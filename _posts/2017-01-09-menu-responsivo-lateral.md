@@ -4,7 +4,7 @@ author: habemus
 title:  Menu responsivo lateral
 lang:   pt
 ref:    responsive-side-menu
-date:   2017-01-09
+date:   2017-01-11
 
 preview-url: http://responsive-side-menu.habemus.website/
 
@@ -27,9 +27,9 @@ Um projeto base é um projeto com a estrutura básica de arquivos e alguns compo
 Este projeto base já vem pronto com o funcionamento de um menu que se adequa ao tamano da tela do dispositivo em que o website foi acessado, além de definir as interações de abertura e fechamento do menu.
 
 - dispositivos grandes  (>500px): menu que mostra todos os itens de navegação
-- dispositivos pequenos (<=500px): menu que é acionado por um botão abre pela lateral no mobile
+- dispositivos pequenos (<=500px): menu que é acionado por um botão e abre pela lateral no mobile
 
-![preview](https://github.com/habemus/responsive-side-menu/raw/master/preview.gif "Preview")
+![preview](https://github.com/habemus/starter-responsive-side-menu/raw/master/preview.gif "Preview")
 
 ## Organização dos arquivos
 
