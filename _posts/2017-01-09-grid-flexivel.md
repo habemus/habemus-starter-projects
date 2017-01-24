@@ -37,18 +37,18 @@ Além disso, ele possui um grid flexível de elementos, que faz com que o conte�
 
 ```
 flex-grid/
-├── img/                          # pasta que contém todas as imagens
+├── img/                          -- pasta que contém todas as imagens
 │   ├── logo.png
 │   ├── menu-trigger-images.svg
-│   └── img-1.svg ... img-8.svg   # imagens-exemplo
+│   └── img-1.svg ... img-8.svg   -- imagens-exemplo
 ├── scripts/
-│   └── header.js                 # interações do menu responsivo
+│   └── header.js                 -- interações do menu responsivo
 ├── styles/
-│   ├── grid.css                  # estilos do grid flexível
-│   ├── header.css                # estilos do header flexível responsivo
-│   ├── reset.css                 # reset navegador
-│   └── style.css                 # folha de estilos principal
-└── index.html                    # home
+│   ├── grid.css                  -- estilos do grid flexível
+│   ├── header.css                -- estilos do header flexível responsivo
+│   ├── reset.css                 -- reset navegador
+│   └── style.css                 -- folha de estilos principal
+└── index.html                    -- home
 ```
 
 ## Desenvolvido por

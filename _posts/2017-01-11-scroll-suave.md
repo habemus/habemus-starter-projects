@@ -35,16 +35,16 @@ Além disso, os links do menu direcionam para seções correspondentes ao longo 
 
 ```
 starter-smooth-scroll/
-├── img/                          # pasta que contém todas as imagens
+├── img/                          -- pasta que contém todas as imagens
 │   ├── logo.png
 │   └── menu-trigger-images.svg
 ├── scripts/
-│   └── header.js                 # interações no header responsivo
+│   └── header.js                 -- interações no header responsivo
 ├── styles/
-│   ├── header.css                # estilos do header responsivo
-│   ├── reset.css                 # reset do browser
-│   └── style.css                 # folha de estilo principal
-└── index.html                    # home
+│   ├── header.css                -- estilos do header responsivo
+│   ├── reset.css                 -- reset do browser
+│   └── style.css                 -- folha de estilo principal
+└── index.html                    -- home
 ```
 
 ## Desenvolvido por

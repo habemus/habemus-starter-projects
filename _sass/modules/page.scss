@@ -23,9 +23,9 @@
 }
 
 .box {
-	background-color: #FFFFFF;
-	padding: 20px;
-	box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
+	// background-color: #FFFFFF;
+	padding: 10px;
+	// box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
 	margin-bottom: $spacing-unit;
 
 	@include media-query($on-laptop) {
@@ -37,6 +37,25 @@
 	}
 }
 
+.box.white {
+	background-color: #FFFFFF;
+	padding: 10px;
+	// box-shadow: 0 1px 3px rgba(0,0,0,0.16), 0 1px 3px rgba(0,0,0,0.23);
+	margin-bottom: $spacing-unit;
+
+	@include media-query($on-laptop) {
+		margin-bottom: $spacing-unit/2;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.column {
+	width: 100%;
+}
+
 .left-column {
 	flex-grow: 1;
 	// margin-right: $spacing-unit/2;
@@ -45,7 +64,7 @@
 
 .right-column {
 	margin-left: $spacing-unit;
-	
+
 	@include media-query($on-laptop) {
 		margin-left: $spacing-unit/2;
 	}
@@ -62,7 +81,8 @@
 
 	h2 {
 		font-weight: bold;
-		font-size: 18px;
+		font-size: 16px;
+
 	}
 
 	ul {
@@ -75,7 +95,7 @@
 			a {
 
 				transition: all ease 0.3s;
-				
+
 				h3 {
 					margin-bottom: 3px;
 					color: $grey-color;
@@ -135,5 +155,8 @@
 }
 
 .page-heading {
-	font-size: 20px;
+	font-family: "Montserrat", sans-serif;
+	font-size: 24px;
+	color: $grey-color-medium;
+	margin-bottom: 42px;
 }

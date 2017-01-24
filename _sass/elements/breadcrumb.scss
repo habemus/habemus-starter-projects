@@ -1,10 +1,14 @@
 .breadcrumb {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  
-  font-size: 25px;
-  
+  margin-bottom: 42px;
+  font-size: 24px;
+  font-family: "Montserrat", sans-serif;
+
+  a {
+    color: $grey-color-medium;
+  }
+
   b {
+    font-weight: 300;
     color: $grey-color-dark;
   }
 }

@@ -4,7 +4,7 @@ layout: habemus-page
 
 <div class="home">
 
-  <!-- <h1 class="page-heading">Posts</h1> -->
+  <h1 class="page-heading">{{ site.data.t[page.lang].chooseProjectToStart }}</h1>
 
   <ul class="post-list">
 
@@ -13,32 +13,48 @@ layout: habemus-page
 
     {% for post in langPosts %}
       <li class="box-style box">
-        
-        <a
-          class="post-link"
-          href="{{ post.url }}">
+
+        <div class="post-card">
           {% if post.image-thumb %}
-          <img
-            src="{{ post.image-thumb }}"
-            alt="{{ post.alt-image }}"
-            class="full-width-img">
-          {% endif %}
-  
-          <span class="post-meta">
-            {{ post.date | date: "%B %-d, %Y" }}
-          </span>
-  
+          <div class="img-container">
+            <img
+              src="{{ post.image-thumb }}"
+              alt="{{ post.alt-image }}"
+              class="full-width-img">
+            <div class="overlay-img">
+              <div class="actions column">
+                <a
+                  class="post-link"
+                  href="{{ post.url }}">
+                  {{ site.data.t[post.lang].viewDetails }}
+                </a>
+                <a
+                  class="primary habemus-button"
+                  target="_blank"
+                  data-action="deploy"
+        	        data-template-url="{{ site.url }}/resources/starter-projects/{{ post.ref }}/website.zip">
+                  {{ site.data.t[post.lang].deployToHabemus }}
+                </a>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+
           <h2>
             {{ post.title }}
           </h2>
-          
+
+          <span class="post-meta">
+            {{ site.data.t[page.lang].developedBy }} <strong>{{ post.author }}</strong>
+          </span>
+
           <p>
             {{ post.description }}
           </p>
-        </a>
+        </div>
 
+        <!--
         <div class="share-page share-page-post">
-        <!--     Share this on &rarr; -->
           {{ site.data.t[page.lang].shareThisOn }}
           <a
             href="https://twitter.com/intent/tweet?text={{ post.title | strip_html }}&url={{ post.url | prepend: site.url }}&via={{ site.twitter_username }}&related={{ site.twitter_username }}"
@@ -70,7 +86,8 @@ layout: habemus-page
             </span>
             Google+
           </a>
-        </div>      
+        </div>
+      -->
       </li>
     {% endfor %}
   </ul>

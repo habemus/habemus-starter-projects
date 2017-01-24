@@ -34,16 +34,16 @@ Besides, when clicking on menu links, the view slides down and up smoothly. Menu
 
 ```
 starter-smooth-scroll/
-├── img/                          # directory containing all images
+├── img/                          -- directory containing all images
 │   ├── logo.png
 │   └── menu-trigger-images.svg
 ├── scripts/
-│   └── header.js                 # responsive header interactions
+│   └── header.js                 -- responsive header interactions
 ├── styles/
-│   ├── header.css                # responsive header styles
-│   ├── reset.css                 # browser resets
-│   └── style.css                 # main stylesheet
-└── index.html                    # homepage
+│   ├── header.css                -- responsive header styles
+│   ├── reset.css                 -- browser resets
+│   └── style.css                 -- main stylesheet
+└── index.html                    -- homepage
 ```
 
 ## Developed by

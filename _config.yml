@@ -11,7 +11,7 @@ site_title: Habemus
 site_url: http://starter-projects.habemus.website/
 dashboard_url: http://habemus.io/dashboard
 email: hello@habem.us
-description: A Habemus é uma plataforma de desenvolvimento web para a geração maker
+# description: Projetos base Habemus - estrutura básica de arquivos e alguns componentes já integrados. São ótimos pontos de partida para começar seu website.
 # baseurl: "http://blog.habemus.website" # the subpath of your site, e.g. /blog
 url: http://starter-projects.habemus.website # the base hostname & protocol for your site
 twitter_username: "habemus_web"
@@ -20,10 +20,5 @@ github_username:  "habemus"
 # Build settings
 markdown: redcarpet
 # lsi: true
-
-# highlights
-highlights:
-  - parallax-scroll
-  - squares-grid
 
 permalink: /:year/:month/:day/:title.html

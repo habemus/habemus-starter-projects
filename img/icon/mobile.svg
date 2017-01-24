@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px"
+	 height="32px" viewBox="0 0 32 32" enable-background="new 0 0 32 32" xml:space="preserve">
+<g id="PRINCIPAL">
+</g>
+<g id="CLIQUE">
+</g>
+<g id="MATERIAL">
+</g>
+<g id="REFERENCIAS">
+</g>
+<g id="MENU">
+</g>
+<g id="HOVER">
+</g>
+<g id="MODAL" display="none">
+</g>
+<g id="LOADING">
+	<g>
+		<path fill="#3C3C3C" d="M20.873,2.598h-9.746c-2.021,0-3.654,1.632-3.654,3.656v19.494c0,2.022,1.633,3.654,3.654,3.654h9.746
+			c2.025,0,3.656-1.632,3.656-3.654V6.254C24.529,4.229,22.898,2.598,20.873,2.598z M18.439,26.966h-4.877v-1.218h4.877V26.966z
+			 M22.395,23.311H9.604V6.254h12.791V23.311z"/>
+		<rect fill="none" width="32" height="32"/>
+	</g>
+</g>
+</svg>

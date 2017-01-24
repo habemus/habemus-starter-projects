@@ -2,15 +2,15 @@
 layout: habemus-post
 ---
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  
+
   <div class="breadcrumb">
     <a href="{{ site.data.t[page.lang].homeUrl }}">
-      {{ site.data.t[page.lang].starterTemplates }}
+      {{ site.data.t[page.lang].starterProjects }}
     </a> > <b>{{ page.title }}</b>
   </div>
-  
+
   <header class="post-header">
-    
+
     <div class="preview-container">
       <div class="preview tablet">
         <div>
@@ -31,17 +31,11 @@ layout: habemus-post
         </div>
       </div>
     </div>
-    
+
     <div class="info">
       <h2>
         {{ page.title }}
       </h2>
-      <time
-        datetime="{{ page.date }}"
-        itemprop="datePublished">
-        {{ page.date | date: "%B %-d, %Y" }}
-      </time>
-      
       {% if page.author %}
       <span
         itemprop="author"
@@ -53,11 +47,18 @@ layout: habemus-post
       </span>
       <br />
       {% endif %}
-      
+
+      <time
+        datetime="{{ page.date }}"
+        itemprop="datePublished">
+        {{ page.date | date: "%B %-d, %Y" }}
+      </time>
+      <br><br>
+
       <p>
         {{ page.description }}
       </p>
-      
+
       <div class="actions">
         <button data-action="open-previewer">
           {{ site.data.t[page.lang].seePreview }}
@@ -67,7 +68,7 @@ layout: habemus-post
     	    href="{{ site.url }}/resources/starter-projects/{{ page.ref }}/website.zip">
           {{ site.data.t[page.lang].download }}
         </a>
-    	  
+
         <a
           class="primary habemus-button"
           target="_blank"
@@ -78,34 +79,35 @@ layout: habemus-post
 
       </div>
     </div>
-    
+
   </header>
-  
+
 	<div class="box">
+    <h1 class="about-title">{{ site.data.t[page.lang].aboutThisStarterProject }}:</h1>
 
 	  <div class="post-content" itemprop="articleBody">
 	    {{ content }}
 	  </div>
-	  
+
 	  {% include _share-page.html %}
   </div>
 
   <div class="box author-content">
   	{% assign author = site.data.author[page.author] %}
   	<div class="author-photo">
-  		<img src="{{ author.photo }}">
+  		<img src="{{ author[page.lang].photo }}">
   	</div>
   	<div>
       {{ site.data.t[page.lang].developedBy }} <br />
   		<a rel="author"
 		  href="{{ author.linkedin }}"
 		  title="{{ author.name }}" class="author-name" target="_blank">
-		    {{ author.name }}
+		    {{ author[page.lang].name }}
 			</a>
-			<p>{{ author.bio }}</p>
+			<p>{{ author[page.lang].bio }}</p>
   	</div>
   </div>
-  
+
   <!-- previewer -->
   <div id="previewer" data-mode="desktop">
     <header id="previewer-header">
@@ -119,29 +121,33 @@ layout: habemus-post
             {{ site.data.t[page.lang].deployToHabemus }}
           </a>
         </div>
-        
+
         <h1>{{ page.title }}</h1>
       </div>
-      
+
       <ul id="previewer-mode-selector" class="center">
         <li data-mode="desktop">
+          <img src="/img/icon/desktop.svg" alt="desktop icon">
           desktop
         </li>
         <li data-mode="tablet">
+          <img src="/img/icon/tablet.svg" alt="tablet icon">
           tablet
         </li>
         <li data-mode="mobile">
+          <img src="/img/icon/mobile.svg" alt="mobile icon">
           mobile
         </li>
       </ul>
-      
+
       <div class="right">
+        <a href="#">download</a>
         <a href="{{ page.preview-url }}" target="_blank">
-          new-window
+          <img src="/img/icon/new-tab.svg" alt="open in new tab icon">
         </a>
-        
+
         <button data-action="close-previewer" class="close">
-          x
+          <img src="/img/icon/close.svg" alt="close icon">
         </button>
       </div>
     </header>
@@ -152,44 +158,38 @@ layout: habemus-post
     </section>
   </div>
   <!-- previewer -->
-  
+
   <!-- config -->
   <script>
     window.HABEMUS_DASHBOARD_URI = '{{ site.dashboard_url }}';
   </script>
-  
+
   <!-- lib -->
   <script src="/bower_components/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="/resources/scripts/lib/habemus-buttons.js" type="text/javascript" charset="utf-8"></script>
-  
+
   <!-- scripts -->
   <script src="/resources/scripts/global.js" type="text/javascript" charset="utf-8"></script>
   <script src="/resources/scripts/post.js" type="text/javascript" charset="utf-8"></script>
 
+  <div id="disqus_thread" class="box white"></div>
+  <script>
 
-  <div id="disqus_thread" class="box"></div>
-	<script>
-		/**
-		* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-		* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-		*/
-		
-		var disqus_config = function () {
-		this.page.url = "{{ site.baseurl.page.url }}"; // Replace PAGE_URL with your page's canonical URL variable
-		console.log(this.page.url);
-		this.page.identifier = "{{ page.id }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-		};
-		
-		(function() { // DON'T EDIT BELOW THIS LINE
-		var d = document, s = d.createElement('script');
+  /**
+  *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+  *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  var disqus_config = function () {
+  this.page.url = "{{ site.baseurl.page.url }}"; // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = "{{ page.id }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  (function() { // DON'T EDIT BELOW THIS LINE
+  var d = document, s = d.createElement('script');
+  s.src = '//webstarterprojects.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
-		s.src = '//habemus-blog.disqus.com/embed.js';
-
-		s.setAttribute('data-timestamp', +new Date());
-		(d.head || d.body).appendChild(s);
-		})();
-	</script>
-
-	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
 
 </article>

@@ -35,16 +35,16 @@ This starter project comes with a menu that adequates itself to the screen width
 
 ```
 responsive-side-menu/
-├── img/                          # directory containing all images
+├── img/                          -- directory containing all images
 │   ├── logo.png
 │   └── menu-trigger-images.svg
 ├── scripts/
-│   └── header.js                 # responsive header interactions
+│   └── header.js                 -- responsive header interactions
 ├── styles/
-│   ├── header.css                # responsive header styles
-│   ├── reset.css                 # browser resets
-│   └── style.css                 # main stylesheet
-└── index.html                    # homepage
+│   ├── header.css                -- responsive header styles
+│   ├── reset.css                 -- browser resets
+│   └── style.css                 -- main stylesheet
+└── index.html                    -- homepage
 ```
 
 ## Developed by
