@@ -4,7 +4,7 @@ author: habemus
 title:  Scroll suave
 lang:   pt
 ref:    smooth-scroll
-date:   2017-01-11
+date:   2017-01-24
 
 preview-url: http://smooth-scroll.habemus.website/
 

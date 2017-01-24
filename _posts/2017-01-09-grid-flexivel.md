@@ -4,7 +4,7 @@ author: habemus
 title:  Grid flexível
 lang:   pt
 ref:    flex-grid
-date:   2017-01-09
+date:   2017-01-24
 
 preview-url: http://flex-grid.habemus.website/
 

@@ -4,7 +4,7 @@ author: habemus
 title:  Responsive side menu
 lang:   en
 ref:    responsive-side-menu
-date:   2017-01-11
+date:   2017-01-24
 
 preview-url: http://responsive-side-menu.habemus.website/
 
