@@ -29,8 +29,6 @@ $(function () {
   var $previewer             = $('#previewer');
   var $previewerIframe       = $previewer.find('iframe');
   var $previewerModeSelector = $previewer.find('#previewer-mode-selector');
-  var $previewerClose        = $('[data-action="close-previewer"]');
-  var $previewerOpen         = $('[data-action="open-previewer"]');
 
   // load webpage
   $previewerIframe.attr('src', $previewerIframe.data('src'));
@@ -53,7 +51,6 @@ $(function () {
 
   // attach event handlers
   $previewerModeSelector.on('click', 'li', function (e) {
-    console.log(e.currentTarget);
     var mode = $(e.currentTarget).data('mode');
 
     if (mode) {
@@ -61,12 +58,18 @@ $(function () {
     }
   });
 
-  $previewerClose.on('click', function () {
-    $previewer.close();
-  });
+  $(window).on('hashchange', _handleHashchange);
 
-  $previewerOpen.on('click', function () {
-    $previewer.open();
-  });
+  function _handleHashchange() {
+    var hash = window.location.hash || '';
+
+    if (hash === '#preview') {
+      $previewer.open();
+    } else {
+      $previewer.close();
+    }
+  }
+
+  _handleHashchange();
 
 });

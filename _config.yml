@@ -8,12 +8,13 @@
 # Site settings
 title: Habemus blog
 site_title: Habemus
-site_url: http://starter-projects.habemus.website/
-dashboard_url: http://habemus.io/dashboard
+habemus:
+  home_url: https://habemus.io
+  dashboard_url: https://habemus.io/dashboard
 email: hello@habem.us
 # description: Projetos base Habemus - estrutura básica de arquivos e alguns componentes já integrados. São ótimos pontos de partida para começar seu website.
 # baseurl: "http://blog.habemus.website" # the subpath of your site, e.g. /blog
-url: http://starter-projects.habemus.website # the base hostname & protocol for your site
+url: https://habemus.io/starter-projects # the base hostname & protocol for your site
 twitter_username: "habemus_web"
 github_username:  "habemus"
 
@@ -21,4 +22,4 @@ github_username:  "habemus"
 markdown: redcarpet
 # lsi: true
 
-permalink: /:year/:month/:day/:title.html
+permalink: /project/:slug

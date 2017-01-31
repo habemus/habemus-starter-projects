@@ -60,15 +60,14 @@ layout: habemus-post
       </p>
 
       <div class="actions">
-        <button data-action="open-previewer">
+        <a href="#preview">
           {{ site.data.t[page.lang].seePreview }}
-        </button>
+        </a>
     	  <a
     	    target="_blank"
     	    href="{{ site.url }}/resources/starter-projects/{{ page.ref }}/website.zip">
           {{ site.data.t[page.lang].download }}
         </a>
-
         <a
           class="primary habemus-button"
           target="_blank"
@@ -145,10 +144,9 @@ layout: habemus-post
         <a href="{{ page.preview-url }}" target="_blank">
           <img src="/img/icon/new-tab.svg" alt="open in new tab icon">
         </a>
-
-        <button data-action="close-previewer" class="close">
+        <a href="#" class="close">
           <img src="/img/icon/close.svg" alt="close icon">
-        </button>
+        </a>
       </div>
     </header>
     <section id="previewer-body">
@@ -161,7 +159,7 @@ layout: habemus-post
 
   <!-- config -->
   <script>
-    window.HABEMUS_DASHBOARD_URI = '{{ site.dashboard_url }}';
+    window.HABEMUS_DASHBOARD_URI = '{{ site.habemus.dashboard_url }}';
   </script>
 
   <!-- lib -->
