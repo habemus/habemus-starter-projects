@@ -39,9 +39,38 @@
 
   <link href='https://fonts.googleapis.com/css?family=Source+Serif+Pro:300,400,600|Lora:300,400,300italic,400italic,700,700italic|Merriweather:300,400,700,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.url }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.url }}">
 
+  <!-- languages -->
+  {% if page.layout == 'home' %}
+
+    {% assign homeTranslations=site.pages | where:"ref", page.ref | sort: 'lang' %}
+
+    {% for translation in homeTranslations %}
+      {% if page.lang != translation.lang %}
+      <link
+        rel="alternate"
+        hreflang="{{ translation.lang }}"
+        href="{{ translation.url | prepend: site.url }}" />
+      {% endif %}
+    {% endfor %}
+
+  {% endif %}
+  {% if page.layout == 'post' %}
+
+    {% assign postTranslations=site.posts | where:"ref", page.ref | sort: 'lang' %}
+
+    {% for translation in postTranslations %}
+      {% if page.lang != translation.lang %}
+      <link
+        rel="alternate"
+        hreflang="{{ translation.lang }}"
+        href="{{ translation.url | prepend: site.url }}" />
+      {% endif %}
+    {% endfor %}
+
+  {% endif %}
 
 </head>

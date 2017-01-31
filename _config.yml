@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: Habemus blog
+title: Habemus Starter Projects
 site_title: Habemus
 habemus:
   home_url: https://habemus.io
