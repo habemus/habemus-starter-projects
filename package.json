@@ -14,6 +14,7 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/habemus-tutti/web-starter-templates#readme",
   "devDependencies": {
+    "fs-extra": "^2.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-cheerio": "^0.6.2",

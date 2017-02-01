@@ -22,4 +22,4 @@ github_username:  "habemus"
 markdown: redcarpet
 # lsi: true
 
-permalink: /project/:slug
+permalink: /project/:slug.html

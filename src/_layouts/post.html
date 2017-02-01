@@ -14,19 +14,24 @@ layout: habemus-post
     <div class="preview-container">
       <div class="preview tablet">
         <div>
-          <iframe data-src="{{ page.preview-url }}"></iframe>
+          <!--
+            TODO: once habemus has https support, use only the preview-url
+            iframes use the website within the project,
+            due to http iframe restrictions
+          -->
+          <iframe data-src="{{ site.url }}/resources/starter-projects/{{ page.ref }}/website/index.html"></iframe>
           <div class="screen-overlay"></div>
         </div>
       </div>
       <div class="preview desktop">
         <div>
-          <iframe data-src="{{ page.preview-url }}"></iframe>
+          <iframe data-src="{{ site.url }}/resources/starter-projects/{{ page.ref }}/website/index.html"></iframe>
           <div class="screen-overlay"></div>
         </div>
       </div>
       <div class="preview mobile">
         <div>
-          <iframe data-src="{{ page.preview-url }}"></iframe>
+          <iframe data-src="{{ site.url }}/resources/starter-projects/{{ page.ref }}/website/index.html"></iframe>
           <div class="screen-overlay"></div>
         </div>
       </div>
@@ -94,7 +99,7 @@ layout: habemus-post
   <div class="box author-content">
   	{% assign author = site.data.author[page.author] %}
   	<div class="author-photo">
-  		<img src="{{ author[page.lang].photo }}">
+  		<img src="{{ author[page.lang].photo | prepend: site.url }}">
   	</div>
   	<div>
       {{ site.data.t[page.lang].developedBy }} <br />
@@ -126,15 +131,15 @@ layout: habemus-post
 
       <ul id="previewer-mode-selector" class="center">
         <li data-mode="desktop">
-          <img src="/img/icon/desktop.svg" alt="desktop icon">
+          <img src="{{ site.url }}/img/icon/desktop.svg" alt="desktop icon">
           desktop
         </li>
         <li data-mode="tablet">
-          <img src="/img/icon/tablet.svg" alt="tablet icon">
+          <img src="{{ site.url }}/img/icon/tablet.svg" alt="tablet icon">
           tablet
         </li>
         <li data-mode="mobile">
-          <img src="/img/icon/mobile.svg" alt="mobile icon">
+          <img src="{{ site.url }}/img/icon/mobile.svg" alt="mobile icon">
           mobile
         </li>
       </ul>
@@ -142,16 +147,20 @@ layout: habemus-post
       <div class="right">
         <a href="#">download</a>
         <a href="{{ page.preview-url }}" target="_blank">
-          <img src="/img/icon/new-tab.svg" alt="open in new tab icon">
+          <img src="{{ site.url }}/img/icon/new-tab.svg" alt="open in new tab icon">
         </a>
         <a href="#" class="close">
-          <img src="/img/icon/close.svg" alt="close icon">
+          <img src="{{ site.url }}/img/icon/close.svg" alt="close icon">
         </a>
       </div>
     </header>
     <section id="previewer-body">
       <div id="previewer-iframe-container">
-        <iframe data-src="{{ page.preview-url }}"></iframe>
+        <!--
+          iframes use the website within the project,
+          due to http iframe restrictions
+        -->
+        <iframe data-src="{{ site.url }}/resources/starter-projects/{{ page.ref }}/website/index.html"></iframe>
       </div>
     </section>
   </div>
@@ -163,12 +172,28 @@ layout: habemus-post
   </script>
 
   <!-- lib -->
-  <script src="/bower_components/jquery/dist/jquery.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/resources/scripts/lib/habemus-buttons.js" type="text/javascript" charset="utf-8"></script>
+  <script
+    src="{{ site.url }}/bower_components/jquery/dist/jquery.min.js"
+    type="text/javascript"
+    charset="utf-8">
+  </script>
+  <script
+    src="{{ site.url }}/resources/scripts/lib/habemus-buttons.js"
+    type="text/javascript"
+    charset="utf-8">
+  </script>
 
   <!-- scripts -->
-  <script src="/resources/scripts/global.js" type="text/javascript" charset="utf-8"></script>
-  <script src="/resources/scripts/post.js" type="text/javascript" charset="utf-8"></script>
+  <script
+    src="{{ site.url }}/resources/scripts/global.js"
+    type="text/javascript"
+    charset="utf-8">
+  </script>
+  <script
+    src="{{ site.url }}/resources/scripts/post.js"
+    type="text/javascript"
+    charset="utf-8">
+  </script>
 
   <div id="disqus_thread" class="box white"></div>
   <script>
