@@ -1,5 +1,5 @@
 en:
-  homeUrl: "/"
+  homeUrl: ""
   goToHabemus: "go to habemus"
   goToDashboard: "go to dashboard"
   developedBy: "developed by"
@@ -15,7 +15,7 @@ en:
   aboutThisStarterProject: "About this starter project"
   siteDescription: "Habemus Starter Projects: basic file structure and some components readily integrated. They are great for starting your own website."
 pt:
-  homeUrl: "/pt"
+  homeUrl: "pt/" # trailing slash is very important
   goToHabemus: "ir para a habemus"
   goToDashboard: "ir para dashboard"
   developedBy: "desenvolvido por"

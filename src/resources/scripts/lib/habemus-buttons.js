@@ -31,8 +31,6 @@ document.addEventListener('DOMContentLoaded', function (e) {
     button.setAttribute('hidden', 'true');
   });
   
-  'http://localhost:3000/dashboard/'
-  
   if (!HABEMUS_DASHBOARD_URI) {
     console.warn('window.HABEMUS_DASHBOARD_URI must be set. Cancelling button rendering.');
     return;

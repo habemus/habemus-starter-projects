@@ -4,7 +4,7 @@ layout: habemus-post
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
   <div class="breadcrumb">
-    <a href="{{ site.data.t[page.lang].homeUrl }}">
+    <a href="{{ site.url }}/{{ site.data.t[page.lang].homeUrl }}">
       {{ site.data.t[page.lang].starterProjects }}
     </a> > <b>{{ page.title }}</b>
   </div>
@@ -145,7 +145,11 @@ layout: habemus-post
       </ul>
 
       <div class="right">
-        <a href="#">download</a>
+        <a
+          target="_blank"
+          href="{{ site.url }}/resources/starter-projects/{{ page.ref }}/website.zip">
+          {{ site.data.t[page.lang].download }}
+        </a>
         <a href="{{ page.preview-url }}" target="_blank">
           <img src="{{ site.url }}/img/icon/new-tab.svg" alt="open in new tab icon">
         </a>
