@@ -124,6 +124,17 @@ $device-border-color: #eaeaea;
 	}
 }
 
+@include media-query($on-laptop) {
+	.post-header {
+		flex-direction: column;
+    align-items: flex-start;
+    
+    > .info {
+      width: 100%;
+  	}
+	}
+}
+
 /**
  * Previewer
  */
@@ -295,26 +306,13 @@ body[data-previewer="active"] {
 	margin-bottom: 0;
 }
 
+
 .post-content {
-	width: 70%;
+  width: 80%;
 	max-width: 900px;
+	min-width: 300px;
 	padding-bottom: 40px;
 	border-bottom: 1px solid #cccccc;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-.post-content {
 	margin-bottom: $spacing-unit;
 
 	p,
@@ -399,6 +397,12 @@ body[data-previewer="active"] {
 		@include media-query($on-palm) {
 			font-size: 16px;
 		}
+	}
+}
+
+@include media-query($on-laptop) {
+	.post-content {
+		width: 100%;
 	}
 }
 

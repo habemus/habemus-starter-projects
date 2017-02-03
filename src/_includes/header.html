@@ -1,4 +1,4 @@
-<header class="site-header">
+<!-- <header class="site-header">
 
   <div class="wrapper">
 
@@ -34,4 +34,55 @@
     </div>
   </div>
 
+</header>
+ -->
+
+<header id="header">
+  <div id="header-container">
+    <a href="index.html" id="logo">
+      <img id="logo-dark" src="/img/logo-dark.svg">
+      <img id="logo-light" src="/img/logo-light.svg">
+    </a>
+    <div id="menu">
+      <nav>
+        <ul>
+          <li><a href="/" class="menu-item">home</a></li>
+          <li><a href="{{ site.data.t[page.lang].homeUrl }}" class="menu-item active">{{ site.data.t[page.lang].starterProjects }}</a>
+          </li>
+          <li><a href="http://blog.habemus.website" class="menu-item" target="_blank">{{ t.nav.blog }} blog</a></li>
+          <li><a href="/contact.html" class="menu-item">{{ site.data.t[page.lang].contact }}</a></li>
+          <!-- <li>
+            <a href="#login" class="open-login-form">{{ site.data.t[page.lang].login }}</a>
+          </li> -->
+          <li>
+            <a href="/dashboard">{{ site.data.t[page.lang].goToDashboard }}</a>
+          </li>
+          <!-- <li data-auth="logged-in" hidden>
+            <a href="#logout">{{ t.nav.logOut }}logout</a>
+          </li> -->
+        </ul>
+        <div id="menu-overlay"></div>
+      </nav>
+      <div class="language-buttons">
+          {% assign postTranslations=site.posts | where:"ref", page.ref | sort: 'lang' %}
+
+          {% for translation in postTranslations %}
+            <a href="{{ translation.url }}" class="{{ translation.lang }}">{{ translation.lang | capitalize }}</a>
+            {% if forloop.last == false %} <span> | </span> {% endif %}
+          {% endfor %}
+
+          {% assign pageTranslations=site.pages | where:"ref", page.ref | sort: 'lang' %}
+
+          {% for translation in pageTranslations %}
+            <a href="{{ translation.url }}" class="{{ translation.lang }}">{{ translation.lang | capitalize  }}</a>
+            {% if forloop.last == false %} <span> | </span> {% endif %}
+          {% endfor %}
+      </div>
+    </div>
+    <div id="menu-right-command">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
 </header>
