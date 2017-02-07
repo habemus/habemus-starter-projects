@@ -14,7 +14,7 @@ habemus:
 email: hello@habem.us
 # description: Projetos base Habemus - estrutura básica de arquivos e alguns componentes já integrados. São ótimos pontos de partida para começar seu website.
 # baseurl: "http://blog.habemus.website" # the subpath of your site, e.g. /blog
-# url: https://habemus.io/starter-projects # the base hostname & protocol for your site
+url: https://habemus.io/starter-projects # the base hostname & protocol for your site
 twitter_username: "habemus_web"
 github_username:  "habemus"
 
