@@ -1,61 +1,22 @@
-<!-- <header class="site-header">
-
-  <div class="wrapper">
-
-    <div id="header-content">
-      <div id="content-left">
-        <a href="{{ site.url }}/{{ site.data.t[page.lang].homeUrl }}" id="logo">
-          <img id="logo-light" src="{{ site.url }}/img/logo-light.svg">
-        </a>
-        <a href="{{ site.url }}/{{ site.data.t[page.lang].homeUrl }}" class="header-title">
-          web starter projects
-        </a>
-      </div>
-      <div id="content-right">
-
-        <span id="language">
-          {% assign postTranslations=site.posts | where:"ref", page.ref | sort: 'lang' %}
-
-          {% for translation in postTranslations %}
-            <a href="{{ translation.url | prepend: site.url }}" class="{{ translation.lang }}">{{ translation.lang }}</a>
-            {% if forloop.last == false %} | {% endif %}
-          {% endfor %}
-
-          {% assign pageTranslations=site.pages | where:"ref", page.ref | sort: 'lang' %}
-
-          {% for translation in pageTranslations %}
-            <a href="{{ translation.url | prepend: site.url }}" class="{{ translation.lang }}">{{ translation.lang }}</a>
-            {% if forloop.last == false %} | {% endif %}
-          {% endfor %}
-
-        </span>
-        <a id="go-to-habemus" href="{{ site.habemus.dashboard_url }}">{{ site.data.t[page.lang].goToDashboard }}</a>
-      </div>
-    </div>
-  </div>
-
-</header>
- -->
-
 <header id="header">
   <div id="header-container">
-    <a href="index.html" id="logo">
+    <a href="{{ site.habemus.home_url }}/" id="logo">
       <img id="logo-dark" src="/img/logo-dark.svg">
       <img id="logo-light" src="/img/logo-light.svg">
     </a>
     <div id="menu">
       <nav>
         <ul>
-          <li><a href="/" class="menu-item">home</a></li>
+          <li><a href="{{ site.habemus.home_url }}/" class="menu-item">home</a></li>
           <li><a href="{{ site.data.t[page.lang].homeUrl }}" class="menu-item active">{{ site.data.t[page.lang].starterProjects }}</a>
           </li>
           <li><a href="http://blog.habemus.website" class="menu-item" target="_blank">{{ t.nav.blog }} blog</a></li>
-          <li><a href="/contact.html" class="menu-item">{{ site.data.t[page.lang].contact }}</a></li>
+          <li><a href="{{ site.habemus.home_url }}/contact.html" class="menu-item">{{ site.data.t[page.lang].contact }}</a></li>
           <!-- <li>
             <a href="#login" class="open-login-form">{{ site.data.t[page.lang].login }}</a>
           </li> -->
           <li>
-            <a href="/dashboard">{{ site.data.t[page.lang].goToDashboard }}</a>
+            <a href="{{ site.habemus.dashboard_url }}">{{ site.data.t[page.lang].goToDashboard }}</a>
           </li>
           <!-- <li data-auth="logged-in" hidden>
             <a href="#logout">{{ t.nav.logOut }}logout</a>
