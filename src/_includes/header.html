@@ -28,14 +28,14 @@
           {% assign postTranslations=site.posts | where:"ref", page.ref | sort: 'lang' %}
 
           {% for translation in postTranslations %}
-            <a href="{{ translation.url }}" class="{{ translation.lang }}">{{ translation.lang | capitalize }}</a>
+            <a href="{{ site.url }}/{{ translation.url }}" class="{{ translation.lang }}">{{ translation.lang | capitalize }}</a>
             {% if forloop.last == false %} <span> | </span> {% endif %}
           {% endfor %}
 
           {% assign pageTranslations=site.pages | where:"ref", page.ref | sort: 'lang' %}
 
           {% for translation in pageTranslations %}
-            <a href="{{ translation.url }}" class="{{ translation.lang }}">{{ translation.lang | capitalize  }}</a>
+            <a href="{{ site.url }}/{{ translation.url }}" class="{{ translation.lang }}">{{ translation.lang | capitalize  }}</a>
             {% if forloop.last == false %} <span> | </span> {% endif %}
           {% endfor %}
       </div>
