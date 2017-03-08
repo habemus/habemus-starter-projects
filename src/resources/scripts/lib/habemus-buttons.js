@@ -18,9 +18,15 @@
  */
 
 document.addEventListener('DOMContentLoaded', function (e) {
+  // check if user is logged in
+  // TODO: add a flag to h-account-client, so that we do not need to retrieve
+  // the token
+  var HABEMUS_AUTH_TOKEN_NAME_LS_KEY = 'h_account_auth_token';
+  var IS_AUTHENTICATED = !!window.localStorage.getItem(HABEMUS_AUTH_TOKEN_NAME_LS_KEY);
   
   // TODO: substitute for script src
   var HABEMUS_DASHBOARD_URI = window.HABEMUS_DASHBOARD_URI;
+  var HABEMUS_TRY_URI       = window.HABEMUS_TRY_URI;
   
   var habemusButtons = Array.prototype.slice.call(
     document.querySelectorAll('a.habemus-button'),
@@ -35,9 +41,15 @@ document.addEventListener('DOMContentLoaded', function (e) {
     console.warn('window.HABEMUS_DASHBOARD_URI must be set. Cancelling button rendering.');
     return;
   }
+
+  if (!HABEMUS_TRY_URI) {
+    console.warn('window.HABEMUS_TRY_URI must be set. Cancelling button rendering.');
+    return;
+  }
   
   HABEMUS_DASHBOARD_URI = HABEMUS_DASHBOARD_URI.replace(/\/$/, '');
-  
+  HABEMUS_TRY_URI = HABEMUS_TRY_URI.replace(/\/$/, '');
+
   // check properties and show buttons
   habemusButtons.forEach(function (button) {
     var action      = button.getAttribute('data-action');
@@ -54,12 +66,24 @@ document.addEventListener('DOMContentLoaded', function (e) {
           console.warn('templateURL is required for deploy');
           return;
         }
-        
-        var buttonHref = [
-          HABEMUS_DASHBOARD_URI,
-          '/#/?templateURL=',
-          encodeURIComponent(templateURL)
-        ];
+
+        var buttonHref;
+
+        if (IS_AUTHENTICATED) {
+          // authenticated, go to dashboard
+          var buttonHref = [
+            HABEMUS_DASHBOARD_URI,
+            '/#/?templateURL=',
+            encodeURIComponent(templateURL)
+          ];
+        } else {
+          // unauthenticated, go to try
+          var buttonHref = [
+            HABEMUS_TRY_URI,
+            '/?template_url=',
+            encodeURIComponent(templateURL),
+          ];
+        }
         
         if (projectName) {
           buttonHref.push('&project-name');
