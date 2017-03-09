@@ -1,7 +1,11 @@
 const child_process = require('child_process');
 const path = require('path');
 
+const mergeStream = require('merge-stream');
+const runSequence = require('run-sequence');
+
 const gulp = require('gulp');
+const gulpZip = require('gulp-zip');
 const autoprefixer = require('gulp-autoprefixer');
 const gulpIf = require('gulp-if');
 const gulpCheerio = require('gulp-cheerio');
@@ -32,32 +36,70 @@ const GA_SCRIPT = `<script>
 
 </script>`;
 
-gulp.task('distribute', function (done) {
+/**
+ * Compiles jekyll website
+ */
+gulp.task('distribute:jekyll', function (done) {
 
   var opts = {
     cwd: path.join(__dirname, 'src'),
   };
-
-  fse.removeSync(path.join(__dirname, 'dist'));
 
   child_process.execFile('jekyll', ['build'], opts, (error, stdout, stderr) => {
 
     if (error) {
       throw error;
     }
-    gulp.src('src/_site/**/*')
-      // css
-      .pipe(gulpIf(isCss, autoprefixer({
-        browsers: ['last 2 versions'],
-        cascade: false
-      })))
-      // ga
-      .pipe(gulpIf(shouldHaveGA, gulpCheerio(function ($, file, done) {
-        $('body').append(GA_SCRIPT);
-        done();
-      })))
-      .pipe(gulp.dest('dist'))
-      .on('finish', done)
-      .on('error', done);
+
+    done();
   });
+});
+
+/**
+ * Generates zip files for each starter project
+ */
+gulp.task('distribute:zip-starter-projects', function () {
+  var projects = fse.readdirSync(STARTER_PROJECTS_BASE_PATH);
+
+  var zipStreams = projects.map((projectName) => {
+
+    var projectPath = path.join(STARTER_PROJECTS_BASE_PATH, projectName);
+
+    return gulp.src(path.join(projectPath, 'website/**/*'))
+      .pipe(gulpZip('website.zip'))
+      .pipe(gulp.dest(projectPath));
+  });
+
+  var allStreams = mergeStream();
+
+  zipStreams.forEach((stream) => {
+    allStreams.add(stream);
+  });
+
+  return allStreams;
+});
+
+/**
+ * Copies resulting jekyll website to the final dist dir and 
+ * executes post processing over files
+ */
+gulp.task('distribute:copy', function () {
+  return gulp.src('src/_site/**/*')
+    // css
+    .pipe(gulpIf(isCss, autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    })))
+    // ga
+    .pipe(gulpIf(shouldHaveGA, gulpCheerio(function ($, file, done) {
+      $('body').append(GA_SCRIPT);
+      done();
+    })))
+    .pipe(gulp.dest('dist'))
+})
+
+gulp.task('distribute', function (done) {
+  fse.removeSync(path.join(__dirname, 'dist'));
+
+  return runSequence('distribute:jekyll', 'distribute:zip-starter-projects', 'distribute:copy');
 });
