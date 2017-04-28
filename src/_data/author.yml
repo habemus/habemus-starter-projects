@@ -33,3 +33,15 @@ habemus:
     photo: /img/author/habemus.png
     bio: Plataforma de desenvolvimento web para a geração maker. Trabalhamos para a construção de uma internet mais democrática e plena.
     linkedin: https://habem.us
+
+programaria:
+  en:
+    name: PrograMaria
+    photo: /img/author/programaria.png
+    bio: Enterprise that empowers girls and women with technology and programming skills.
+    linkedin: http://www.programaria.org/
+  pt:
+    name: PrograMaria
+    photo: /img/author/programaria.png
+    bio: Iniciativa que empodera meninas e mulheres através da tecnologia e programação.
+    linkedin: http://www.programaria.org/
