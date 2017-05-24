@@ -1,0 +1,96 @@
+/**
+ * Estilos base compartilhados entre todos os containers
+ * e itens.
+ */
+body {
+  font-family: Monospace;
+}
+
+.container {
+  background-color: lightgray;
+  position: relative;
+}
+
+/**
+ * Row axis arrows:
+ * Main axis
+ */
+.container.row::before {
+  content: '--- main ---------->';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container.row-reverse::before {
+  content: '<---------- main ---';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/**
+ * Row axis arrows:
+ * Cross axis
+ */
+.container.row::after,
+.container.row-reverse::after {
+  content: '--- cross ---------->';
+  opacity: 0.4;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+
+/**
+ * Column axis arrows:
+ * Main axis
+ */
+.container.column::before {
+  content: '--- main ---------->';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.container.column-reverse::before {
+  content: '<---------- main ---';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/**
+ * Column axis arrows:
+ * Cross axis
+ */
+.container.column::after,
+.container.column-reverse::after {
+  content: '--- cross ---------->';
+  opacity: 0.4;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.item {
+  width: 100px;
+  height: 150px;
+  
+  background-color: darkred;
+  border: black dashed 1px;
+  
+  counter-increment: item;
+}
+
+.item::before {
+  content: counter(item);
+  color: white;
+}

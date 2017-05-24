@@ -34,6 +34,18 @@ habemus:
     bio: Plataforma de desenvolvimento web para a geração maker. Trabalhamos para a construção de uma internet mais democrática e plena.
     linkedin: https://habem.us
 
+habemus-workshop:
+  en:
+    name: Habemus
+    photo: /img/author/habemus.png
+    bio: Web development platform for maker generation. We work on building a more democratic and full internet.
+    linkedin: https://habem.us
+  pt:
+    name: Habemus
+    photo: /img/author/habemus.png
+    bio: Plataforma de desenvolvimento web para a geração maker. Trabalhamos para a construção de uma internet mais democrática e plena.
+    linkedin: https://habem.us
+
 programaria:
   en:
     name: PrograMaria

@@ -1,5 +1,7 @@
 FROM nginx:1.10
 
+# gcr.io/habemus-web/static-assets-starter-projects
+
 MAINTAINER Simon Fan <simon.fan@habem.us>
 
 # nginx configuration files

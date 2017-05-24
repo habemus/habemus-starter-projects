@@ -4,7 +4,7 @@ author: programaria
 title:  Meu 1 bug - Intro Web - Ex 1
 lang:   en
 ref:    meu-1-bug-intro-web-ex1
-date:   2017-04-30
+date:   2017-04-28
 
 preview-url: http://meu-1-bug-intro-web-ex1.habemus.website/
 

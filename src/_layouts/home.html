@@ -6,10 +6,11 @@ layout: habemus-page
 
   <h1 class="page-heading">{{ site.data.t[page.lang].chooseProjectToStart }}</h1>
 
+  <!-- Habemus's posts -->
   <ul class="post-list">
 
     <!-- render only posts with the same language -->
-    {% assign langPosts=site.posts | where:"lang", page.lang %}
+    {% assign langPosts=site.posts | where:"lang", page.lang | where:"author","habemus" %}
 
     {% for post in langPosts %}
       <li class="box-style box">
@@ -32,6 +33,113 @@ layout: habemus-page
                   class="primary habemus-button"
                   data-action="deploy"
         	        data-template-url="{{ site.url }}/resources/starter-projects/{{ post.ref }}/website.zip">
+                  {{ site.data.t[post.lang].deployToHabemus }}
+                </a>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+
+          <h2>
+            {{ post.title }}
+          </h2>
+
+          <span class="post-meta">
+            {{ site.data.t[page.lang].developedBy }} <strong>{{ post.author }}</strong>
+          </span>
+
+          <p>
+            {{ post.description }}
+          </p>
+        </div>
+
+      </li>
+    {% endfor %}
+  </ul>
+
+
+  <h2 class="page-heading">{{ site.data.t[page.lang].habemusWorkshopProjects }}</h2>
+
+  <!-- Habemus workshop' posts -->
+  <ul class="post-list">
+
+    <!-- render only posts with the same language -->
+    {% assign langPosts=site.posts | where:"lang", page.lang | where:"author","habemus-workshop" %}
+
+    {% for post in langPosts %}
+      <li class="box-style box">
+
+        <div class="post-card">
+          {% if post.image-thumb %}
+          <div class="img-container">
+            <img
+              src="{{ post.image-thumb | prepend: site.url }}"
+              alt="{{ post.alt-image }}"
+              class="full-width-img">
+            <div class="overlay-img">
+              <div class="actions column">
+                <a
+                  class="post-link"
+                  href="{{ post.url | prepend: site.url }}">
+                  {{ site.data.t[post.lang].viewDetails }}
+                </a>
+                <a
+                  class="primary habemus-button"
+                  data-action="deploy"
+                  data-template-url="{{ site.url }}/resources/starter-projects/{{ post.ref }}/website.zip">
+                  {{ site.data.t[post.lang].deployToHabemus }}
+                </a>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+
+          <h2>
+            {{ post.title }}
+          </h2>
+
+          <span class="post-meta">
+            {{ site.data.t[page.lang].developedBy }} <strong>{{ post.author }}</strong>
+          </span>
+
+          <p>
+            {{ post.description }}
+          </p>
+        </div>
+
+      </li>
+    {% endfor %}
+  </ul>
+
+  <h2 class="page-heading">{{ site.data.t[page.lang].programariaProjects }}</h2>
+
+  <!-- Programaria's posts -->
+  <ul class="post-list">
+
+    <!-- render only posts with the same language -->
+    {% assign langPosts=site.posts | where:"lang", page.lang | where:"author","programaria" %}
+
+    {% for post in langPosts %}
+      <li class="box-style box">
+
+        <div class="post-card">
+          {% if post.image-thumb %}
+          <div class="img-container">
+            <img
+              src="{{ post.image-thumb | prepend: site.url }}"
+              alt="{{ post.alt-image }}"
+              class="full-width-img">
+            <div class="overlay-img">
+              <div class="actions column">
+                <a
+                  class="post-link"
+                  href="{{ post.url | prepend: site.url }}">
+                  {{ site.data.t[post.lang].viewDetails }}
+                </a>
+                <a
+                  class="primary habemus-button"
+                  data-action="deploy"
+                  data-template-url="{{ site.url }}/resources/starter-projects/{{ post.ref }}/website.zip">
                   {{ site.data.t[post.lang].deployToHabemus }}
                 </a>
               </div>

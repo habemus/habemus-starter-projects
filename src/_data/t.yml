@@ -17,6 +17,8 @@ pt:
   chooseProjectToStart: "Escolha um projeto base para iniciar seu website"
   aboutThisStarterProject: "Sobre este projeto base"
   siteDescription: "Projetos base Habemus: estrutura básica de arquivos com alguns componentes já integrados. São ótimos pontos de partida para começar seu website."
+  programariaProjects: "Projetos Programaria"
+  habemusWorkshopProjects: "Oficinas"
 en:
   homeUrl: "/"
   goToHabemus: "go to habemus"
@@ -36,3 +38,5 @@ en:
   chooseProjectToStart: "Choose a starter project for your website"
   aboutThisStarterProject: "About this starter project"
   siteDescription: "Habemus Starter Projects: basic file structure and some components readily integrated. They are great for starting your own website."
+  programariaProjects: "Programaria Projects"
+  habemusWorkshopProjects: "Workshops"
