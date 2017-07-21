@@ -2,6 +2,7 @@ body {
 	font-family: 'Open Sans', 'Arial', sans-serif;
 	background-color: #0F2E45;
   margin: 0;
+  margin-bottom: 50px;
 }
 
 section {
@@ -19,9 +20,9 @@ section {
 }
 
 #apresentacao {
-  height: 60vh;
-  padding-top: 20vh;
-  padding-bottom: 20vh;
+  height: 80vh;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
   background-color:#4e3a82;
   background-size: cover;
 	position: relative;
