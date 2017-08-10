@@ -1,0 +1,26 @@
+#ilustracao-astronauta {
+  position: relative;
+  padding: 100px 0 50px 0;
+}
+
+#ilustracao-astronauta img{
+  position: relative;
+  left:-1150px;
+  transition: all ease 3s;
+}
+
+#ilustracao-astronauta:hover img{
+  left:-900px;
+}
+
+@media screen and (max-width: 650px) {
+  #ilustracao-astronauta img{
+    width: 1000px;
+    left:-800px;
+    transition: all ease 2s;
+  }
+
+  #ilustracao-astronauta:hover img{
+    left:-700px;
+  }
+}
